@@ -1,0 +1,112 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#F3F2EC"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet"><title>검은 복도 | 백유라 캐릭터 설정서</title><style>
+:root{--paper:#F3F2EC;--navy:#133D7A;--ink:#0B0B0B;--size:17px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;min-width:320px;background:var(--paper);color:var(--ink);font-family:Pretendard,"Noto Sans KR","Malgun Gothic",sans-serif;font-size:var(--size);line-height:1.82;word-break:keep-all}
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--navy);z-index:999}
+header.top{position:sticky;top:0;z-index:100;background:rgba(243,242,236,.96);border-bottom:2px solid var(--navy);backdrop-filter:blur(12px)}
+.top-inner{max-width:980px;margin:auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.brand small{display:block;color:var(--navy);font-size:.62rem;font-weight:900;letter-spacing:.2em}.brand b{font-family:Georgia,serif;font-size:1.2rem}
+.tools{display:flex;gap:7px}.tools button{min-width:44px;min-height:42px;border:2px solid var(--navy);border-radius:999px;background:transparent;color:var(--navy);font-weight:900}
+nav{display:none;position:fixed;z-index:90;top:74px;left:14px;right:14px;max-width:540px;margin:auto;padding:12px;background:var(--paper);border:2px solid var(--navy);border-radius:14px;grid-template-columns:repeat(2,1fr);gap:8px;box-shadow:0 16px 40px rgba(0,0,0,.12)}
+nav.open{display:grid}nav a{padding:10px;color:var(--ink);text-align:center;text-decoration:none;border:1px solid rgba(19,61,122,.3);border-radius:10px;font-weight:800}
+main{max-width:920px;margin:auto;padding:20px 14px 60px}
+.hero,.card{background:var(--paper);border:2px solid var(--navy);border-radius:22px;padding:22px 18px;margin-bottom:16px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.hero{border-width:3px;position:relative;overflow:hidden}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 11px;border-radius:999px;font-size:.73rem;font-weight:900;background:var(--navy);color:var(--paper)}.chip.culprit{background:var(--ink)}
+.hero h1{margin:18px 0 0;color:var(--navy);font-family:Georgia,serif;font-size:clamp(3rem,14vw,6rem);line-height:.92;letter-spacing:-.08em}.hero p{font-weight:800}.notice{font-size:.78rem;opacity:.72}
+.section-title{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start;padding-bottom:16px;margin-bottom:22px;border-bottom:2px solid var(--navy)}.num{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--paper);font-family:Georgia,serif;font-weight:800}.section-title small{display:block;color:var(--navy);font-size:.62rem;font-weight:900;letter-spacing:.15em}.section-title h2{margin:2px 0 0;font-size:1.14rem;line-height:1.35}.section-title h2 span{display:block;color:var(--navy);font-size:.68rem}
+.prose p,.timeline-item p,.secret-text{margin:0 0 1.2em}.prose blockquote{margin:18px 0 22px;padding:16px 18px;border:1px solid rgba(19,61,122,.3);border-left:5px solid var(--navy);border-radius:0 12px 12px 0;font-weight:800;background:rgba(255,255,255,.25)}
+.timeline{display:grid;gap:14px}.timeline-item{padding:17px 15px;border:1px solid rgba(19,61,122,.28);border-radius:13px;background:rgba(255,255,255,.22)}.timeline-item time{color:var(--navy);font-size:.76rem;font-weight:900}.timeline-item h4{margin:3px 0 10px}.timeline-item p:last-child{margin-bottom:0}
+.items{display:grid;gap:12px}.item{padding:18px;border:2px solid var(--navy);border-radius:14px}.item span{display:block;color:var(--navy);font-size:.72rem;font-weight:900}.item strong{font-family:Georgia,serif;font-size:1.35rem}
+.secret-text{font-size:1.03rem;font-weight:800}.scores{display:grid;gap:10px}.score{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 16px;border:1px solid rgba(19,61,122,.28);border-radius:13px}.score strong{color:var(--navy);font-family:Georgia,serif;font-size:1.3rem;white-space:nowrap}
+#topBtn{position:fixed;right:16px;bottom:16px;width:50px;height:50px;border-radius:50%;border:2px solid var(--paper);background:var(--navy);color:var(--paper);font-size:1.2rem;font-weight:900;opacity:0;pointer-events:none;transition:.2s}#topBtn.show{opacity:1;pointer-events:auto}
+footer{border-top:2px solid var(--navy);padding:24px;text-align:center;color:var(--navy);font-size:.72rem;font-weight:900}
+@media(min-width:600px){main{padding:30px 22px 70px}.hero,.card{padding:30px}.items{grid-template-columns:1fr 1fr}nav{grid-template-columns:repeat(3,1fr)}}
+</style></head><body>
+<div id="progress"></div>
+<header class="top"><div class="top-inner"><div class="brand"><small>MURDER MYSTERY</small><b>검은 복도</b></div><div class="tools"><button id="minus">가−</button><button id="plus">가＋</button><button id="menu" aria-expanded="false">목차</button></div></div></header>
+<nav id="nav"><a href="#background">배경</a><a href="#actions">행동</a><a href="#items">소지품</a><a href="#secret">핵심 비밀</a><a href="#goal">목적</a></nav>
+<main>
+<section class="hero"><div class="chips"><span class="chip">조연배우</span><span class="chip culprit">당신은 범인이 맞습니다</span></div><h1>백유라</h1><p>《검은 복도》 캐릭터 설정서</p><p class="notice">이 문서는 백유라 역할을 맡은 플레이어만 확인하십시오.</p></section>
+
+<article class="card" id="background"><header class="section-title"><span class="num">01</span><div><small>CHARACTER BACKGROUND</small><h2>백유라의 배경 <span>[당신은 범인이 맞습니다]</span></h2></div></header><div class="prose"><p>당신은 《검은 복도》의 조연배우, 백유라다.</p>
+<p>당신은 한도윤 감독과 오래전부터 함께 작업했다. 그가 아무도 불러 주지 않던 시절부터 그의 현장에 남아 있었다. 이번 영화도 처음에는 당신을 중심으로 만들겠다고 했다.</p>
+<blockquote>“이번엔 네가 중심이야.”</blockquote>
+<p>당신은 그 말을 믿었다. 이번 작품이 다시 배우로 설 수 있는 마지막 기회라고 생각했다. 어머니 병원비와 밀린 생활비도, 끊어질 듯 이어지던 배우 생활도, 이 영화가 끝나면 조금은 나아질 거라고 믿었다.</p>
+<p>당신에게는 다른 작품 제안도 있었다. 큰 역할은 아니었지만 출연료가 확실한 일이었다. 그 돈이면 어머니 병원비를 막을 수 있었다. 하지만 한도윤은 당신을 붙잡았다. 이번 영화는 당신이 중심이라고, 당신 이름으로 다시 가 보자고, 이 작품만 끝나면 돈 걱정도 해결될 거라고 말했다. 당신은 그 말을 믿고 다른 일을 거절했다.</p>
+<p>하지만 제작이 진행되면서 모든 것이 바뀌었다. 투자자와 제작 상황을 이유로 서이안이 주연이 되었고, 당신은 조연으로 밀렸다. 출연료는 줄었고, 정산은 뒤로 밀렸다. 이미 거절한 다른 일은 다른 배우에게 넘어갔다.</p>
+<p>그래도 당신은 참았다. 영화가 살아야 자신도 산다고 생각했다. 한도윤이 자신을 완전히 버린 것은 아닐 거라고 믿으려 했다.</p>
+<p>그러던 중, 당신의 휴대폰에 병원에서 보낸 긴급 문자가 도착했다. 문자에는 치료비 입금이 확인되지 않아 수술 준비가 지연되고 있으며, 어머니의 상태가 급격히 나빠지고 있어 보호자 확인이 필요하다는 내용이 적혀 있었다.</p>
+<p>당신은 병원에 전화를 걸려고 했지만, 통화는 제대로 연결되지 않았다. 신호가 잡히다가 끊기고, 다시 전화를 걸어도 연결음만 길게 이어졌다. 결국 당신은 신호가 조금이라도 잘 잡힌다는 분장실 쪽으로 향했다.</p>
+<p>그리고 분장실에서 다시 병원 문자를 받았다. 이번 문자에는 어머니가 사망했다는 내용이 적혀 있었다.</p>
+<p>마지막 문장은 이렇게 끝나 있었다.</p>
+<blockquote>“보호자님께 계속 전화드렸지만 연결되지 않아 문자 남깁니다.”</blockquote>
+<p>당신은 한동안 아무 말도 하지 못했다. 당장 병원으로 가고 싶었지만, 촬영은 아직 끝나지 않았다. 한도윤과 오래 버텨 온 시간, 현장에 대한 책임감, 배우로서의 마지막 자존심 때문에 당신은 촬영장을 떠나지 못했다.</p>
+<p>마음 한쪽으로는 한도윤을 원망했다. 하지만 그래도 그에게 사정이 있었을 거라고 생각했다. 최소한 그가 당신을 속인 것은 아닐 거라고 믿고 싶었다.</p>
+<p>분장실에서 몰래카메라를 발견하기 전까지는.</p>
+<p>당신은 분장실 거울 옆 선반 아래에 숨겨진 작은 몰래카메라를 발견했다. 카메라 안에는 SD카드가 들어 있었다. 당신은 그 안에 무엇이 찍혔는지 확인하기 위해, 문해준이 자리를 비운 틈에 음향 부스로 들어갔다.</p>
+<p>문해준의 노트북으로 SD카드를 확인하자, 영상 첫 부분에는 윤태오의 숨소리와 낮은 말이 들어 있었다.</p>
+<blockquote>“각도 됐네.”</blockquote>
+<p>당신은 윤태오가 분장실에 몰래카메라를 설치했다는 것을 알았다. 영상을 넘기던 중, 당신은 한도윤과 서이안이 분장실에서 성관계를 맺는 장면을 보았다. 하지만 정말 당신을 무너뜨린 것은 그 장면이 아니었다. 그 뒤에 이어진 대화였다.</p>
+<p>한도윤은 당신을 걱정하지 않았다. 미안해하지도 않았다.</p>
+<blockquote>“유라는 못 나가. 갈 데가 없거든.”<br>“어머니 병원비 때문에라도 끝까지 붙어 있을 거야.”<br>“주연이라고 해 줘야 버티지. 안 그러면 벌써 나갔겠지.”<br>“이번 영화는 이안이 얼굴로 가야 살아. 유라는 이름만 필요했어.”<br>“솔직히 안됐긴 한데, 걔 어머니 일까지 내가 책임질 순 없잖아.”</blockquote>
+<p>그 말을 듣는 순간, 당신이 붙잡고 있던 모든 것이 무너졌다. 당신이 믿었던 약속, 거절한 일자리, 지키지 못한 어머니의 마지막 순간, 배우로서의 자존심까지 전부 한도윤에게 이용당한 것처럼 느껴졌다.</p>
+<p>당신은 밀려난 것이 아니었다. 이용당했다.</p>
+<p>당신은 기다린 것이 아니었다. 속았다.</p>
+<p>당신은 버틴 것이 아니었다. 버려질 때까지 붙잡혀 있었다.</p>
+<p>당신은 SD카드를 챙겼다. 노트북 바탕화면에 복사해 둔 영상 파일은 휴지통으로 옮겼다. 이후 당신은 몰래카메라 본체만 윤태오에게 돌려주었다. 윤태오는 슬롯을 확인하고 SD카드가 어디 있냐고 물었지만, 당신은 처음부터 없었다고 답했다. 윤태오는 당신을 의심했지만 크게 따지지는 못했다. 그가 소리를 높이면, 자신이 분장실에 카메라를 숨겼다는 사실부터 드러날 수 있었기 때문이다.</p>
+<p>당신은 한도윤을 죽이기로 했다.</p>
+<p>당신은 그가 받을 메모를 썼다.</p>
+<blockquote>“서이안과의 관계를 알고 있다. 암전 때 외부 소품실로 와라. 혼자.”</blockquote>
+<p>당신은 감독실 안으로 들어가, 한도윤이 발견할 수 있는 곳에 메모를 남겼다. 그가 메모를 보면 외부 소품실로 올 것이라고 생각했다.</p>
+<p>하지만 마지막 암전 장면에는 적외선 카메라가 있었다. 당신은 죽은 수련생의 그림자 역할로 검은 복도 끝 출입문 쪽에 서 있어야 했다. 만약 당신이 정해진 위치를 벗어나면, 움직임이 적외선 화면에 잡힐 수 있었다.</p>
+<p>당신은 마지막 장면 준비를 돕는 척하며 외부 장비 구역으로 갔다. 그곳에는 강재우가 있었다. 외부 장비 구역은 이미 어수선했다. 케이블은 엉켜 있었고, 삼각대와 장비 일부도 제자리를 벗어나 있었다.</p>
+<p>당신은 강재우가 장비를 정리하는 것을 도와주는 척했다. 강재우는 케이블을 정리하고, 보조 카메라와 연결부를 확인하느라 정신이 없어 보였다. 그가 잠시 등을 돌린 순간, 당신은 적외선 센서 장치를 강하게 밀었다. 센서 고정대가 살짝 틀어지고, 연결부 쪽 케이블이 느슨해졌다.</p>
+<p>완전히 부숴 버리지는 않았다. 처음부터 고장이 드러나면 촬영이 취소될 수 있었다. 당신이 원한 것은 암전이 시작된 뒤 화면이 흔들리고, 현장이 잠시 혼란에 빠지는 정도였다.</p>
+<p>암전이 시작된 뒤, 당신은 외부 소품실로 향했다. 당신은 그곳에서 한도윤을 기다렸다. 하지만 어둠 속에서 당신이 공격한 사람은 한도윤이 아니었다. 한도윤의 검은 방수 코트를 입은 윤태오였다.</p>
+<p>쓰러진 얼굴을 확인하고 나서야 죽은 사람이 윤태오라는 것을 알았다. 당신은 한도윤을 죽이지 못했다면, 그를 범인으로 만들어야 한다고 생각했다. 그때 당신은 자신이 가지고 있던 SD카드를 떠올렸다.</p></div></article>
+
+<article class="card" id="actions"><header class="section-title"><span class="num">02</span><div><small>TIMELINE</small><h2>백유라의 행동</h2></div></header><div class="timeline"><section class="timeline-item"><time>20시 30분 무렵</time><h4>촬영장</h4><p>당신은 마지막 암전 장면을 앞두고 계속 촬영에 임했다. 배역 비중은 줄었지만, 당신은 현장을 망치고 싶지 않았다. 죽은 수련생의 그림자 역할이라 해도, 이 장면이 완성되어야 영화가 끝난다고 생각했다. 당신은 한도윤을 원망하면서도, 아직은 촬영을 끝내야 한다고 스스로를 다잡고 있었다.</p></section>
+<section class="timeline-item"><time>20시 40분 무렵</time><h4>촬영장</h4><p>마지막 암전 장면 준비를 시작했다. 서이안은 주인공으로 검은 복도 중간부터 끝 출입문 쪽까지 걸어가야 했다. 당신은 서이안에게 동선과 대기 위치를 다시 알려 주었다. 서이안은 긴장하고 있었고, 당신은 마지막 장면만 잘 버티면 된다고 격려해 주었다.</p></section>
+<section class="timeline-item"><time>20시 50분 무렵</time><h4>배우 대기실</h4><p>당신의 휴대폰에 병원에서 보낸 긴급 문자가 도착했다. 문자에는 치료비 입금이 확인되지 않아 수술 준비가 지연되고 있으며, 어머니의 상태가 급격히 나빠지고 있어 보호자 확인이 필요하다는 내용이 적혀 있었다. 당신은 초조해졌다. 이미 다른 작품 제안을 거절했고, 이번 영화 정산만 기다리고 있었다. 당신은 차민서를 찾아가기로 했다.</p></section>
+<section class="timeline-item"><time>21시 00분 무렵</time><h4>제작 사무실 근처</h4><p>당신은 차민서에게 오늘 정산 일부라도 먼저 받을 수 있는지 물었다. 차민서는 지금은 촬영이 먼저라고 말했다. 마지막 장면만 끝나면 정산 문제를 처리하겠다고 했지만, 당장 줄 수 있는 돈은 없다고 했다. 당신은 병원에서 계속 연락이 온다고 말했지만, 차민서는 촬영을 멈출 수 없다고 답했다. 당신은 더 따지지 못했다. 촬영장은 이미 마지막 암전 장면 준비로 바쁘게 돌아가고 있었다.</p></section>
+<section class="timeline-item"><time>21시 05분 무렵</time><h4>복도</h4><p>당신은 병원에 전화를 걸려고 했다. 하지만 통화가 제대로 연결되지 않았다. 신호가 잡히다가 끊기고, 다시 전화를 걸어도 연결음만 길게 이어졌다. 당신은 점점 초조해졌다.</p></section>
+<section class="timeline-item"><time>21시 08분 무렵</time><h4>음향 부스 근처</h4><p>당신은 문해준에게 전화가 잘 되지 않는데, 이 건물 안에서 신호가 조금이라도 잘 잡히는 곳이 없는지 물었다. 문해준은 분장실 쪽에서는 신호가 조금 잡히는 것 같다고 말했다. 정확한 이유는 모르지만, 그쪽 창가 근처에서 가끔 통화가 된다고 했다. 당신은 곧바로 분장실로 향했다.</p></section>
+<section class="timeline-item"><time>21시 10분 무렵</time><h4>분장실</h4><p>당신은 분장실에 들어갔다. 그곳에서는 휴대폰 신호가 조금 잡혔다. 병원에 전화를 걸려던 순간, 병원에서 문자가 먼저 도착했다. 어머니가 사망했다는 내용이었다.</p></section>
+<section class="timeline-item"><time>21시 15분 무렵</time><h4>분장실</h4><p>당신은 멍한 상태로 분장실 안에 서 있었다. 그때 거울 옆 선반 아래에 붙어 있던 작은 몰래카메라를 발견했다. 처음에는 무슨 장비인지 알아보지 못했다. 하지만 가까이 보니 렌즈가 있었다. 당신은 누군가 이곳을 몰래 찍고 있었다는 사실을 알았다. 당신은 카메라를 떼어냈고, 안쪽을 확인했다. 카메라 안에는 SD카드가 들어 있었다. 당신은 SD카드를 빼냈다.</p></section>
+<section class="timeline-item"><time>21시 18분 무렵</time><h4>분장실 → 음향 부스</h4><p>당신은 SD카드 안에 무엇이 들어 있는지 확인하고 싶었다. 마침 문해준은 음향 부스에 없었다. 당신은 주변을 살핀 뒤, 몰래 음향 부스로 들어갔다. 그때 강재우가 당신이 음향 부스 쪽으로 들어가는 모습을 보았다. 당신도 그가 본 것을 알았다. 하지만 강재우 역시 외부 장비 구역 쪽에서 무언가를 확인하던 중이었고, 그가 굳이 이 일을 문제 삼지는 않을 것이라고 판단했다.</p></section>
+<section class="timeline-item"><time>21시 20분 무렵</time><h4>음향 부스</h4><p>당신은 문해준의 노트북에 SD카드를 연결했다. SD카드 안의 영상을 노트북 바탕화면에 복사했다. 복사가 끝난 뒤 SD카드를 뽑았다. 당신은 바탕화면에 만들어진 영상 파일을 열었다. 영상 첫 부분에는 윤태오의 숨소리와 낮은 말이 들어 있었다. “각도 됐네.” 당신은 윤태오가 몰래카메라를 설치한 것이라고 판단했다.</p></section>
+<section class="timeline-item"><time>21시 23분 무렵</time><h4>음향 부스</h4><p>당신은 영상을 계속 확인했다. 영상에는 한도윤과 서이안이 분장실에서 성관계를 맺는 장면이 있었다. 하지만 정말 당신을 무너뜨린 것은 그 장면이 아니었다. 그 뒤에 이어진 대화였다. 한도윤은 당신을 걱정하지 않았다. 미안해하지도 않았다. 당신은 영상을 멈췄다. 그 순간 당신은 분명히 알았다. 당신은 밀려난 것이 아니었다. 이용당했다. 당신은 기다린 것이 아니었다. 속았다. 당신은 버틴 것이 아니었다. 버려질 때까지 붙잡혀 있었다.</p></section>
+<section class="timeline-item"><time>21시 25분 무렵</time><h4>음향 부스</h4><p>당신은 바탕화면에 복사해 둔 영상 파일을 휴지통으로 옮겼다. 원본 영상이 담긴 SD카드는 따로 챙겼다.</p></section>
+<section class="timeline-item"><time>21시 35분 무렵</time><h4>분장실 근처</h4><p>당신은 윤태오에게 몰래카메라 본체만 돌려주었다. “이런 짓 다시는 하지 마요.” 윤태오는 카메라를 받자마자 슬롯을 확인했다. “SD카드는요?” 당신은 “처음부터 없었어요”라고 대답했다. 윤태오는 당신을 한동안 바라봤지만, 더 따지지 못했다. 그가 소리를 높이는 순간, 자신이 분장실에 카메라를 숨겼다는 사실부터 드러날 수 있었다.</p></section>
+<section class="timeline-item"><time>22시 15분 무렵</time><h4>감독실</h4><p>당신은 한도윤에게 남길 메모를 썼다. “서이안과의 관계를 알고 있다. 암전 때 외부 소품실로 와라. 혼자.” 당신은 감독실 안으로 들어가, 한도윤이 발견할 수 있는 곳에 메모를 남겼다. 당신은 한도윤이 그 메모를 발견하면 외부 소품실로 올 거라고 판단했다. 감독실을 빠져나온 뒤, 당신은 문득 마지막 암전 장면의 적외선 카메라가 떠올랐다. 당신이 검은 복도 끝 위치를 벗어나면 움직임이 화면에 잡힐 수 있었다.</p></section>
+<section class="timeline-item"><time>22시 20분 무렵</time><h4>외부 장비 구역</h4><p>당신은 마지막 장면 준비를 돕는 척하며 외부 장비 구역으로 갔다. 그곳에는 강재우가 있었다. 외부 장비 구역은 이미 어수선했다. 케이블은 엉켜 있었고, 삼각대와 장비 일부도 흔들린 상태였다. 당신은 자연스럽게 장비 정리를 도왔다. 강재우는 케이블을 정리하고, 보조 카메라와 다른 연결부를 확인하느라 정신이 없어 보였다. 강재우가 잠시 등을 돌린 순간, 당신은 적외선 센서 장치를 강하게 밀었다. 센서 고정대가 살짝 틀어졌고, 연결부 쪽 케이블도 느슨해졌다. 완전히 망가뜨리지는 않았다. 암전이 시작된 뒤 화면이 흔들리고, 현장이 잠시 어수선해질 정도면 충분하다고 판단했다.</p></section>
+<section class="timeline-item"><time>23시 00분 무렵</time><h4>검은 복도 끝 출입문 쪽</h4><p>당신은 귀신 분장을 하고 마지막 암전 장면을 준비했다. 당신은 원래 검은 복도 끝 출입문 쪽에 서 있어야 했다. 그곳은 실내였지만 바깥과 가까웠고, 비바람 때문에 바닥에 물기가 조금 들어와 있었다. 당신의 귀신 분장 의상 밑단은 조금 젖었다. 서이안의 주인공 의상도 조금 젖어 있었다.</p></section>
+<section class="timeline-item"><time>23시 05분 무렵</time><h4>검은 복도 끝 출입문 쪽</h4><p>암전 촬영이 시작되었다. 조명이 완전히 꺼졌고, 복도 안은 거의 보이지 않았다. 바로 앞의 사람도 얼굴은커녕 윤곽 정도만 겨우 느껴질 뿐이었다. 곧 강재우가 외치는 소리가 들렸다. “적외선 화면에 문제가 생겼어요! 보조 카메라로 갈게요. 조금만 기다려요.” 현장이 어수선해졌다. 당신은 서이안이 아직 복도 끝 출입문 쪽까지 오기 전이라고 판단했다.</p></section>
+<section class="timeline-item"><time>23시 07분 무렵</time><h4>검은 복도 끝 출입문 쪽 → 외부 소품실</h4><p>당신은 어둠을 이용해 검은 복도 끝 출입문을 통해 밖으로 빠져나갔다. 밖은 폭우와 천둥으로 시끄러웠다. 당신은 외부 소품실로 이동했다. 외부 소품실 안도 어두웠고, 번개가 칠 때만 물건들의 윤곽이 잠깐씩 보였다.</p></section>
+<section class="timeline-item"><time>23시 08분~23시 11분 무렵</time><h4>외부 소품실</h4><p>당신은 정면 출입문 옆에 몸을 숨기고 기다렸다. 근처에 놓여 있던 금속 촛대를 집어 들었다. 어둠 속에서는 문 앞에 선 사람이 누구인지 바로 확인하기 어려웠다. 당신은 한도윤이 메모를 보고 올 것이라고 믿고 있었다.</p></section>
+<section class="timeline-item"><time>23시 12분 무렵</time><h4>외부 소품실</h4><p>외부 소품실 문이 열리는 소리가 들렸다. 검은 방수 코트의 윤곽이 보였다. 얼굴은 제대로 보이지 않았다. 폭우와 어둠, 번개 사이로 보인 모습만으로 당신은 그를 한도윤으로 받아들였다. 당신은 생각할 틈도 없이 금속 촛대를 휘둘렀다.</p></section>
+<section class="timeline-item"><time>23시 13분 무렵</time><h4>외부 소품실</h4><p>그가 쓰러진 뒤, 번개가 다시 번쩍했다. 당신은 그제야 얼굴을 확인했다. 한도윤이 아니었다. 윤태오였다. 당신은 잠시 멈춰 섰다. 하지만 곧 다른 생각이 들었다. 한도윤을 죽이지 못했다면, 한도윤을 범인으로 만들면 된다.</p></section>
+<section class="timeline-item"><time>23시 14분~23시 15분 무렵</time><h4>외부 소품실</h4><p>당신은 가지고 있던 SD카드를 꺼냈다. 윤태오는 한도윤의 검은 방수 코트를 입고 있었다. 당신은 SD카드를 검은 방수 코트 안쪽 주머니 깊숙이 밀어 넣었다. 손이 떨렸지만 멈출 수 없었다.</p></section>
+<section class="timeline-item"><time>23시 16분~23시 18분 무렵</time><h4>외부 소품실 → 검은 복도 끝 출입문 쪽</h4><p>당신은 외부 소품실을 빠져나왔다. 암전 상태라 누가 어디에 있는지 거의 보이지 않았다. 당신은 최대한 소리를 죽이며 검은 복도 끝 출입문 쪽으로 돌아갔다. 비와 어둠 때문에 의상과 옷자락은 더 젖어 있었다.</p></section>
+<section class="timeline-item"><time>23시 20분 무렵</time><h4>검은 복도 끝 출입문 쪽</h4><p>당신은 원래 서 있어야 했던 위치 근처로 돌아왔다. 복도는 여전히 어두웠고, 적외선 화면 문제 때문에 현장은 계속 어수선했다. 당신은 계속 그 자리에 있었던 것처럼 숨을 고르고 자세를 잡았다.</p></section>
+<section class="timeline-item"><time>23시 25분 무렵</time><h4>검은 복도 끝 출입문 쪽</h4><p>촬영은 아직 중단되지 않았다. 당신은 아무것도 모르는 척 가만히 서 있었다. 누가 어디에 있었는지 아무도 제대로 확인하지 못했을 것이다. 암전 상태였고, 복도 안은 한 치 앞도 잘 보이지 않았다.</p></section>
+<section class="timeline-item"><time>23시 30분 무렵</time><h4>촬영장</h4><p>한도윤이 결국 촬영을 중단하고 조명을 켜게 했다. 당신은 눈이 부신 척 고개를 돌렸다. 의상 밑단은 젖어 있었지만, 복도 끝 출입문 쪽 바닥에도 물기가 있었고 서이안의 주인공 의상도 젖어 있었다. 당신은 계속 제 위치에 있었던 것처럼 행동했다.</p></section>
+<section class="timeline-item"><time>23시 40분 무렵</time><h4>촬영장 및 외부 소품실 근처</h4><p>한도윤이 외부 소품실에서 윤태오가 쓰러져 있다고 소리쳤다. 당신은 놀란 척했다. 하지만 당신은 이미 윤태오가 죽었다는 것을 알고 있었다. 당신은 한도윤을 죽이려 했지만, 죽은 사람은 윤태오였다.</p></section></div></article>
+
+<article class="card" id="items"><header class="section-title"><span class="num">03</span><div><small>POSSESSIONS</small><h2>백유라의 소지품 <span>[소지품 카드로 자세한 내용 확인 가능]</span></h2></div></header><div class="items"><div class="item"><span>소지품 A</span><strong>어머니 부고 문자</strong></div><div class="item"><span>소지품 B</span><strong>펜과 메모지</strong></div></div></article>
+
+<article class="card" id="secret"><header class="section-title"><span class="num">04</span><div><small>CORE SECRET</small><h2>백유라의 핵심 비밀</h2></div></header><p class="secret-text">당신은 한도윤을 죽이기 위해 메모를 남기고 적외선 센서 모듈을 망가뜨렸다. 하지만 검은 방수 코트를 입은 윤태오를 한도윤으로 착각해 죽였고, 이후 한도윤에게 죄를 씌우기 위해 SD카드를 코트 안쪽 주머니에 넣었다.</p></article>
+
+<article class="card" id="goal"><header class="section-title"><span class="num">05</span><div><small>OBJECTIVE</small><h2>목적</h2></div></header><div class="scores"><div class="score"><span>최종 투표에서 당신이 범인으로 지목되지 않는다.</span><strong>+3점</strong></div><div class="score"><span>한도윤이 최종 지목 대상이 되도록 만든다.</span><strong>+2점</strong></div></div></article>
+</main>
+<button id="topBtn" aria-label="맨 위로">↑</button><footer>《검은 복도》 캐릭터 설정서 · 백유라</footer><script>
+const root=document.documentElement,progress=document.getElementById("progress"),topBtn=document.getElementById("topBtn"),nav=document.getElementById("nav"),menu=document.getElementById("menu");
+let size=Number(localStorage.getItem("black-corridor-baek-font-size"))||17;
+const apply=()=>{size=Math.max(15,Math.min(22,size));root.style.setProperty("--size",size+"px");localStorage.setItem("black-corridor-baek-font-size",size)};
+document.getElementById("plus").onclick=()=>{size++;apply()};document.getElementById("minus").onclick=()=>{size--;apply()};
+menu.onclick=()=>{nav.classList.toggle("open");menu.setAttribute("aria-expanded",nav.classList.contains("open"))};
+nav.onclick=e=>{if(e.target.closest("a"))nav.classList.remove("open")};
+window.addEventListener("scroll",()=>{const h=document.documentElement.scrollHeight-innerHeight,r=h>0?scrollY/h:0;progress.style.width=(r*100)+"%";topBtn.classList.toggle("show",scrollY>700);sessionStorage.setItem("black-corridor-baek-scroll-position",scrollY)},{passive:true});
+topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});apply();
+const pos=Number(sessionStorage.getItem("black-corridor-baek-scroll-position"));if(pos&&!location.hash)requestAnimationFrame(()=>scrollTo(0,pos));
+</script></body></html>
