@@ -22,9 +22,10 @@ main{max-width:920px;margin:auto;padding:20px 14px 60px}
 footer{border-top:2px solid var(--navy);padding:24px;text-align:center;color:var(--navy);font-size:.72rem;font-weight:900}
 @media(min-width:600px){main{padding:30px 22px 70px}.hero,.card{padding:30px}.items{grid-template-columns:1fr 1fr}nav{grid-template-columns:repeat(3,1fr)}}
 </style>  <link rel="stylesheet" href="manual-viewer.css" />
+  <link rel="stylesheet" href="map-popup.css" />
 </head><body>
 <div id="progress"></div>
-<header class="top"><div class="top-inner"><button class="game-manual-button" id="gameManualOpen" type="button" aria-haspopup="dialog" aria-controls="gameManualViewer">게임 설명서</button><div class="brand"><small>MURDER MYSTERY</small><b>검은 복도</b></div><div class="tools"><button id="minus">가−</button><button id="plus">가＋</button><button id="menu" aria-expanded="false">목차</button></div></div></header>
+<header class="top"><div class="top-inner"><button class="game-manual-button" id="gameManualOpen" type="button" aria-haspopup="dialog" aria-controls="gameManualViewer">게임 설명서</button><div class="brand"><small>MURDER MYSTERY</small><b>검은 복도</b></div><div class="tools"><button class="map-open-button" id="mapOpen" type="button" aria-haspopup="dialog" aria-controls="mapPopup">MAP</button><button id="minus">가−</button><button id="plus">가＋</button><button id="menu" aria-expanded="false">목차</button></div></div></header>
 <nav id="nav"><a href="#background">배경</a><a href="#actions">행동</a><a href="#items">소지품</a><a href="#secret">핵심 비밀</a><a href="#goal">목적</a></nav>
 <main>
 <section class="hero"><div class="chips"><span class="chip">조연배우</span><span class="chip culprit">당신은 범인이 맞습니다</span></div><h1>백유라</h1><p>《검은 복도》 캐릭터 설정서</p><p class="notice">이 문서는 백유라 역할을 맡은 플레이어만 확인하십시오.</p></section>
@@ -133,5 +134,31 @@ const pos=Number(sessionStorage.getItem("black-corridor-baek-scroll-position"));
     </div>
   </section>
 
+  
+  <section class="map-popup" id="mapPopup" role="dialog" aria-modal="true"
+           aria-label="검은 복도 현장 MAP" aria-hidden="true" hidden>
+    <div class="map-popup__header">
+      <div class="map-popup__title">
+        <span>LOCATION MAP</span>
+        <strong>검은 복도 · 현장 MAP</strong>
+      </div>
+
+      <button class="map-popup__close" id="mapClose" type="button"
+              aria-label="캐릭터 설정서로 돌아가기">캐릭터 설정서</button>
+    </div>
+
+    <div class="map-popup__viewport" id="mapViewport">
+      <img class="map-popup__image" id="mapImage" src="map.png"
+           alt="외부 장비 구역, 외부 소품실, 외부 창고, 음향 부스, 배우 대기실, 제작 사무실, 감독실, 분장실과 검은 복도가 표시된 현장 지도">
+    </div>
+
+    <div class="map-popup__zoom" aria-label="지도 확대 축소">
+      <button id="mapZoomOut" type="button" aria-label="지도 축소">−</button>
+      <button id="mapZoomReset" type="button" aria-label="지도 배율 초기화">100%</button>
+      <button id="mapZoomIn" type="button" aria-label="지도 확대">＋</button>
+    </div>
+  </section>
+
+  <script src="map-popup.js"></script>
   <script src="manual-viewer.js"></script>
 </body></html>
