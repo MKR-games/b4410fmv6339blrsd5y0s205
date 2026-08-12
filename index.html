@@ -21,9 +21,10 @@ main{max-width:920px;margin:auto;padding:20px 14px 60px}
 #topBtn{position:fixed;right:16px;bottom:16px;width:50px;height:50px;border-radius:50%;border:2px solid var(--paper);background:var(--navy);color:var(--paper);font-size:1.2rem;font-weight:900;opacity:0;pointer-events:none;transition:.2s}#topBtn.show{opacity:1;pointer-events:auto}
 footer{border-top:2px solid var(--navy);padding:24px;text-align:center;color:var(--navy);font-size:.72rem;font-weight:900}
 @media(min-width:600px){main{padding:30px 22px 70px}.hero,.card{padding:30px}.items{grid-template-columns:1fr 1fr}nav{grid-template-columns:repeat(3,1fr)}}
-</style></head><body>
+</style>  <link rel="stylesheet" href="manual-viewer.css" />
+</head><body>
 <div id="progress"></div>
-<header class="top"><div class="top-inner"><div class="brand"><small>MURDER MYSTERY</small><b>검은 복도</b></div><div class="tools"><button id="minus">가−</button><button id="plus">가＋</button><button id="menu" aria-expanded="false">목차</button></div></div></header>
+<header class="top"><div class="top-inner"><button class="game-manual-button" id="gameManualOpen" type="button" aria-haspopup="dialog" aria-controls="gameManualViewer">게임 설명서</button><div class="brand"><small>MURDER MYSTERY</small><b>검은 복도</b></div><div class="tools"><button id="minus">가−</button><button id="plus">가＋</button><button id="menu" aria-expanded="false">목차</button></div></div></header>
 <nav id="nav"><a href="#background">배경</a><a href="#actions">행동</a><a href="#items">소지품</a><a href="#secret">핵심 비밀</a><a href="#goal">목적</a></nav>
 <main>
 <section class="hero"><div class="chips"><span class="chip">조연배우</span><span class="chip culprit">당신은 범인이 맞습니다</span></div><h1>백유라</h1><p>《검은 복도》 캐릭터 설정서</p><p class="notice">이 문서는 백유라 역할을 맡은 플레이어만 확인하십시오.</p></section>
@@ -109,4 +110,28 @@ nav.onclick=e=>{if(e.target.closest("a"))nav.classList.remove("open")};
 window.addEventListener("scroll",()=>{const h=document.documentElement.scrollHeight-innerHeight,r=h>0?scrollY/h:0;progress.style.width=(r*100)+"%";topBtn.classList.toggle("show",scrollY>700);sessionStorage.setItem("black-corridor-baek-scroll-position",scrollY)},{passive:true});
 topBtn.onclick=()=>scrollTo({top:0,behavior:"smooth"});apply();
 const pos=Number(sessionStorage.getItem("black-corridor-baek-scroll-position"));if(pos&&!location.hash)requestAnimationFrame(()=>scrollTo(0,pos));
-</script></body></html>
+</script>
+  <section class="game-manual-viewer" id="gameManualViewer" role="dialog" aria-modal="true" aria-label="게임 설명서" aria-hidden="true" hidden>
+    <div class="game-manual-viewer__header">
+      <div class="game-manual-viewer__title">
+        <span>GAME MANUAL</span>
+        <strong>검은 복도 · 게임 설명서</strong>
+      </div>
+      <div class="game-manual-viewer__actions">
+        <button class="game-manual-viewer__close" id="gameManualClose" type="button" aria-label="캐릭터 설정서로 돌아가기">캐릭터 설정서</button>
+      </div>
+    </div>
+    <div class="game-manual-viewer__frame-wrap">
+      <div class="game-manual-viewer__loading" id="gameManualLoading">게임 설명서를 불러오는 중입니다.</div>
+      <iframe
+        id="gameManualFrame"
+        title="검은 복도 게임 설명서"
+        data-src="https://mkr-games.github.io/fwoxwsinuueks0hswai05z9m/"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
+  </section>
+
+  <script src="manual-viewer.js"></script>
+</body></html>
